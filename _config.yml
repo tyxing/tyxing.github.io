@@ -7,8 +7,8 @@ title: tyxing
 subtitle: tyxing
 description: tyxing
 author: tyxing
-language:
-timezone:
+language: zh-CN
+timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
