@@ -6,7 +6,7 @@ categories: jekyll update
 ---
 
 
-### 该文章为原创文章，转载请注明出处https://tyxing.github.io/
+*该文章为原创文章，转载请注明出处https://tyxing.github.io/*
 
 
 一些公司有单独的服务器用来部署kafka的broker。
