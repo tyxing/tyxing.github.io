@@ -39,14 +39,13 @@ kafka的partition数目是建立topic之初，根据业务所需的吞吐量提�
 
 3.自定义 Partitioner - 实现 org.apache.kafka.clients.producer.Partitioner, 并通过属性注册。
 
-因此，我们有把数据写到同一个partition的需求时候，需要指定相同的key。
+如果key不为null的时候，
 
-然后kafka的分区器，会把这个key哈希处理，根据哈希值发送到不同的partition上面。
+kafka的分区器，会把这个key哈希处理，根据哈希值发送到不同的partition上面。
 
-因此想把数据顺序写入同一个partition的话，指定相同的key是可以的。
+因此想把数据顺序写入同一个partition的需求，指定相同的key也是常见的策略。
 
-
-现在问题来了，我增加了partition的数目，这个key 哈希是会受到影响的。增加后，新来的数据会发送去其他partition。
+现在问题来了，使用同样的key，然后增加了partition的数目，这个key 哈希是会受到影响的。增加partiton前后，收到的数据因为哈希结果不同，会发送到不同的partition。
 
 也就是说，只有不改变topic的partition数目，同一个key哈希去的位置才会不变。
 
